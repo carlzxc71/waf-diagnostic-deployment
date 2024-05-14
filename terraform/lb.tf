@@ -59,7 +59,8 @@ resource "azurerm_application_gateway" "this" {
   }
 
   backend_address_pool {
-    name = local.backend_address_pool_name
+    name  = local.backend_address_pool_name
+    fqdns = ["app-prod-we-webdemo.azurewebsites.net"]
   }
 
   backend_http_settings {
