@@ -1,6 +1,6 @@
 ## Read about this repo
 
-This repository contains source code to deploy the solution talked about on my website showcasing Azure Storage Actions.
+This repository contains source code to deploy the solution talked about on my website showcasing KQL queries from diagnostic logs sent by Web Application Firewall.
 You can find the post [here]()
 
 ## Deploy the solution
