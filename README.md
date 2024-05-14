@@ -1,7 +1,7 @@
 ## Read about this repo
 
 This repository contains source code to deploy the solution talked about on my website showcasing KQL queries from diagnostic logs sent by Web Application Firewall.
-You can find the post [here]()
+You can find the post [here](https://www.lindbergtech.com/diagnose-logs-from-your-web-application-firewall/)
 
 ## Deploy the solution
 ```Bash
