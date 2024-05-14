@@ -38,8 +38,8 @@ resource "azurerm_application_gateway" "this" {
   location            = azurerm_resource_group.this.location
 
   sku {
-    name     = "Standard_v2"
-    tier     = "Standard_v2"
+    name     = "WAF_v2"
+    tier     = "WAF_v2"
     capacity = 2
   }
 
@@ -66,9 +66,11 @@ resource "azurerm_application_gateway" "this" {
     name                  = local.http_setting_name
     cookie_based_affinity = "Disabled"
     path                  = "/"
-    port                  = 80
-    protocol              = "Http"
+    port                  = 443
+    protocol              = "Https"
     request_timeout       = 60
+
+    pick_host_name_from_backend_address = true
   }
 
   http_listener {
@@ -86,4 +88,6 @@ resource "azurerm_application_gateway" "this" {
     backend_address_pool_name  = local.backend_address_pool_name
     backend_http_settings_name = local.http_setting_name
   }
+
+  firewall_policy_id = azurerm_web_application_firewall_policy.this.id
 }
